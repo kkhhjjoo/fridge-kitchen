@@ -1,0 +1,148 @@
+import type { Recipe } from '@/features/recipes/types'
+
+/** Unsplash 이미지 URL 생성 (width: 화면에 필요한 크기만 받아 로딩 속도 개선) */
+const unsplash = (photoId: string, width = 800): string =>
+  `https://images.unsplash.com/${photoId}?w=${width}&q=75&auto=format&fit=crop`
+
+export const HERO_IMAGE_URL = unsplash('photo-1490645935967-10de6ba17061', 1200)
+
+export const mockRecipes: Recipe[] = [
+  {
+    id: 'rcp-1',
+    title: '새우 토마토 파스타',
+    description: '냉동 새우와 방울토마토로 금방 완성하는 상큼한 파스타',
+    imageUrl: unsplash('photo-1563379926898-05f4575a45d8'),
+    cookingTimeMinutes: 20,
+    difficulty: 'easy',
+    servings: 2,
+    ingredients: [
+      { name: '새우', quantity: 200, unit: 'g' },
+      { name: '방울토마토', quantity: 10, unit: '개' },
+      { name: '마늘', quantity: 4, unit: '쪽' },
+      { name: '올리브유', quantity: 3, unit: '큰술' },
+      { name: '파스타면', quantity: 200, unit: 'g' },
+      { name: '바질', quantity: 5, unit: '장' },
+    ],
+    steps: [
+      '끓는 소금물에 파스타면을 8분간 삶아 주세요.',
+      '팬에 올리브유를 두르고 편 썬 마늘을 약불에 볶아 향을 냅니다.',
+      '새우를 넣고 색이 변할 때까지 볶은 뒤 반으로 자른 방울토마토를 넣어요.',
+      '삶은 면과 면수 반 컵을 넣고 1분간 볶은 뒤 바질을 올려 마무리합니다.',
+    ],
+    tags: ['양식', '20분 요리'],
+  },
+  {
+    id: 'rcp-2',
+    title: '닭가슴살 포케 볼',
+    description: '남은 밥과 채소를 한 그릇에! 고단백 포케',
+    imageUrl: unsplash('photo-1546069901-ba9599a7e63c'),
+    cookingTimeMinutes: 15,
+    difficulty: 'easy',
+    servings: 1,
+    ingredients: [
+      { name: '닭가슴살', quantity: 1, unit: '팩' },
+      { name: '밥', quantity: 1, unit: '공기' },
+      { name: '오이', quantity: 1, unit: '개' },
+      { name: '방울토마토', quantity: 5, unit: '개' },
+      { name: '계란', quantity: 1, unit: '개' },
+      { name: '간장', quantity: 1, unit: '큰술' },
+    ],
+    steps: [
+      '닭가슴살을 한입 크기로 썰어 팬에 노릇하게 구워 주세요.',
+      '계란은 반숙으로 삶고, 오이와 방울토마토는 먹기 좋게 썹니다.',
+      '그릇에 밥을 담고 재료를 둘러 올린 뒤 간장 소스를 뿌려 완성해요.',
+    ],
+    tags: ['한그릇', '다이어트'],
+  },
+  {
+    id: 'rcp-3',
+    title: '두부 채소 곡물 볼',
+    description: '두부를 바삭하게 구워 채소와 곁들인 든든한 한 끼',
+    imageUrl: unsplash('photo-1547592180-85f173990554'),
+    cookingTimeMinutes: 25,
+    difficulty: 'medium',
+    servings: 2,
+    ingredients: [
+      { name: '두부', quantity: 1, unit: '모' },
+      { name: '밥', quantity: 2, unit: '공기' },
+      { name: '방울토마토', quantity: 6, unit: '개' },
+      { name: '양파', quantity: 1, unit: '개' },
+      { name: '애호박', quantity: 1, unit: '개' },
+      { name: '간장', quantity: 2, unit: '큰술' },
+    ],
+    steps: [
+      '두부는 키친타월로 물기를 빼고 깍둑썰기 합니다.',
+      '팬에 두부를 굴려 가며 겉면을 바삭하게 구워요.',
+      '양파와 애호박을 볶다가 간장으로 간을 합니다.',
+      '밥 위에 두부, 볶은 채소, 방울토마토를 올려 완성해요.',
+    ],
+    tags: ['비건', '한그릇'],
+  },
+  {
+    id: 'rcp-4',
+    title: '소고기 채소 샐러드',
+    description: '간장 마늘 소스로 구운 소고기를 듬뿍 올린 따뜻한 샐러드',
+    imageUrl: unsplash('photo-1504674900247-0877df9cc836'),
+    cookingTimeMinutes: 20,
+    difficulty: 'medium',
+    servings: 2,
+    ingredients: [
+      { name: '소고기', quantity: 200, unit: 'g' },
+      { name: '양상추', quantity: 0.5, unit: '통' },
+      { name: '양파', quantity: 0.5, unit: '개' },
+      { name: '마늘', quantity: 2, unit: '쪽' },
+      { name: '간장', quantity: 2, unit: '큰술' },
+    ],
+    steps: [
+      '소고기에 간장과 다진 마늘을 넣고 10분간 재워 둡니다.',
+      '양상추는 찬물에 담갔다가 물기를 빼고, 양파는 얇게 채 썰어요.',
+      '센 불에 소고기를 빠르게 구워 채소 위에 올려 주세요.',
+    ],
+    tags: ['샐러드', '고단백'],
+  },
+  {
+    id: 'rcp-5',
+    title: '바나나 프렌치토스트',
+    description: '익어가는 바나나와 식빵으로 만드는 달콤한 브런치',
+    imageUrl: unsplash('photo-1484723091739-30a097e8f929'),
+    cookingTimeMinutes: 15,
+    difficulty: 'easy',
+    servings: 2,
+    ingredients: [
+      { name: '식빵', quantity: 4, unit: '장' },
+      { name: '계란', quantity: 2, unit: '개' },
+      { name: '우유', quantity: 100, unit: 'ml' },
+      { name: '바나나', quantity: 1, unit: '개' },
+      { name: '블루베리', quantity: 1, unit: '줌' },
+    ],
+    steps: [
+      '계란과 우유를 잘 섞어 계란물을 만듭니다.',
+      '식빵을 계란물에 충분히 적셔 주세요.',
+      '버터를 녹인 팬에 앞뒤로 노릇하게 구워요.',
+      '슬라이스한 바나나와 블루베리를 올려 완성합니다.',
+    ],
+    tags: ['브런치', '디저트'],
+  },
+  {
+    id: 'rcp-6',
+    title: '오이 토마토 그린 샐러드',
+    description: '냉장고 속 채소를 아삭하게 즐기는 5분 샐러드',
+    imageUrl: unsplash('photo-1512621776951-a57141f2eefd'),
+    cookingTimeMinutes: 5,
+    difficulty: 'easy',
+    servings: 1,
+    ingredients: [
+      { name: '양상추', quantity: 0.3, unit: '통' },
+      { name: '오이', quantity: 1, unit: '개' },
+      { name: '방울토마토', quantity: 5, unit: '개' },
+      { name: '올리브유', quantity: 1, unit: '큰술' },
+      { name: '발사믹식초', quantity: 1, unit: '큰술' },
+    ],
+    steps: [
+      '채소를 씻어 물기를 빼고 먹기 좋은 크기로 썰어요.',
+      '올리브유와 발사믹식초를 1:1로 섞어 드레싱을 만듭니다.',
+      '채소에 드레싱을 뿌려 가볍게 버무려 완성해요.',
+    ],
+    tags: ['샐러드', '5분 요리'],
+  },
+]

@@ -1,0 +1,20 @@
+{
+  "name": "fridge-kitchen-app",
+  "private": true,
+  "version": "0.1.0",
+  "description": "냉털키친 앱 (Capacitor) — 웹(../)을 빌드한 결과를 안드로이드·아이폰 앱으로 감쌉니다",
+  "scripts": {
+    "build:web": "npm --prefix .. run build",
+    "sync": "npm run build:web && cap sync",
+    "android": "npm run sync && cap open android",
+    "ios": "npm run sync && cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.6.2",
+    "@capacitor/core": "8.6.2",
+    "@capacitor/ios": "8.6.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.6.2"
+  }
+}

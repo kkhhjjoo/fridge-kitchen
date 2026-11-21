@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+
+/*
+ * ─────────────────────────────────────────────
+ *  디자인 토큰 (Tailwind v4 방식)
+ * ─────────────────────────────────────────────
+ *  @theme 안에 선언한 변수는 자동으로 유틸리티 클래스가 됩니다.
+ *  예) --color-brand-600  →  bg-brand-600, text-brand-600, border-brand-600
+ *      --color-cream-50   →  bg-cream-50
+ *  색을 바꾸고 싶으면 여기 한 곳만 수정하면 앱 전체에 반영됩니다.
+ */
+@theme {
+  --font-sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+
+  /* 메인: 자연스러운 그린 (허브/채소 느낌의 차분한 녹색) */
+  --color-brand-50: #f1f7f1;
+  --color-brand-100: #dcebdd;
+  --color-brand-200: #bad7bd;
+  --color-brand-300: #8fbc95;
+  --color-brand-400: #619c6b;
+  --color-brand-500: #4a8a56;
+  --color-brand-600: #3f7d4e; /* 기본 버튼 · 강조 */
+  --color-brand-700: #32633e;
+  --color-brand-800: #2a5034;
+  --color-brand-900: #22412b;
+
+  /* 배경: 따뜻한 아이보리 */
+  --color-cream-50: #fdfbf6;
+  --color-cream-100: #f8f4ea; /* 페이지 기본 배경 */
+  --color-cream-200: #efe8d8;
+  --color-cream-300: #e3d9c3;
+
+  /* 포인트: 오렌지 (유통기한 임박, CTA 강조) */
+  --color-accent-50: #fff5eb;
+  --color-accent-100: #ffe6cc;
+  --color-accent-400: #fb9a3c;
+  --color-accent-500: #f2801f;
+  --color-accent-600: #d96a0f;
+
+  /* 텍스트: 순수 검정 대신 따뜻한 짙은 갈색-회색 */
+  --color-ink-900: #2b2620;
+  --color-ink-700: #4a433a;
+  --color-ink-500: #7a7166;
+  --color-ink-300: #b5ac9f;
+
+  --radius-card: 1.25rem;
+  --shadow-card: 0 1px 2px rgb(43 38 32 / 0.04), 0 4px 16px rgb(43 38 32 / 0.06);
+  --shadow-card-hover: 0 2px 4px rgb(43 38 32 / 0.05), 0 12px 28px rgb(43 38 32 / 0.1);
+}
+
+@layer base {
+  html {
+    /* iOS에서 가로 회전 시 글자 크기가 커지는 현상 방지 */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-cream-100 font-sans text-ink-900 antialiased;
+    word-break: keep-all; /* 한글 단어가 중간에 끊기지 않도록 */
+  }
+
+  /* 키보드 탐색 시에만 보이는 포커스 링 (접근성) */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-600;
+  }
+}
+
+/* 모션 줄이기를 설정한 사용자에게는 애니메이션 최소화 (접근성) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,5 +1,40 @@
-# 내 자료와 기록 (Supabase 설정, 요리법 목록, 로고) — GitHub에 올리지 않는다
-data/
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+#env
+.env/*
+
+# 내 자료와 기록 (Supabase 설정 등) — GitHub에 올리지 않는다
+my-tool/data/
 
 # Claude Code 개인 설정
 .claude/settings.local.json
+my-tool/.claude/settings.local.json
+
+# VS Code Local History 자동 백업
+.history/
+
+# Supabase CLI 임시 파일
+supabase/.temp/
