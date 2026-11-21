@@ -1,0 +1,5 @@
+# 내 자료와 기록 (Supabase 설정, 요리법 목록, 로고) — GitHub에 올리지 않는다
+data/
+
+# Claude Code 개인 설정
+.claude/settings.local.json
